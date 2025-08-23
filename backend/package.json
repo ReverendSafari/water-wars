@@ -10,17 +10,22 @@
     "build": "echo 'No build step required'"
   },
   "dependencies": {
-    "express": "^4.18.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "sqlite3": "^5.1.6",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
     "moment": "^2.29.4",
-    "helmet": "^7.1.0"
+    "pg": "^8.16.3"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "keywords": ["water", "tracking", "api", "express"],
+  "keywords": [
+    "water",
+    "tracking",
+    "api",
+    "express"
+  ],
   "author": "Safari & Brielle",
   "license": "MIT"
 }
