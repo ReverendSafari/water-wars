@@ -1,0 +1,67 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Floating water droplets background */
+.App::before {
+  content: '💧';
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  font-size: 2rem;
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+.App::after {
+  content: '🌊';
+  position: fixed;
+  top: 20%;
+  right: 15%;
+  font-size: 2.5rem;
+  animation: float 8s ease-in-out infinite reverse;
+  z-index: -1;
+}
+
+/* Additional floating elements */
+.floating-element {
+  position: fixed;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  animation: float 10s ease-in-out infinite;
+  z-index: -1;
+}
+
+.floating-element:nth-child(1) {
+  top: 60%;
+  left: 5%;
+  animation-delay: 2s;
+}
+
+.floating-element:nth-child(2) {
+  top: 80%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+.floating-element:nth-child(3) {
+  top: 40%;
+  left: 85%;
+  animation-delay: 6s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App {
+    padding: 16px;
+  }
+  
+  .App::before,
+  .App::after {
+    font-size: 1.5rem;
+  }
+}

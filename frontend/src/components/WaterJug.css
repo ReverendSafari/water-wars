@@ -1,0 +1,240 @@
+.water-jug {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.jug-container {
+  position: relative;
+  width: 200px;
+  height: 300px;
+}
+
+.jug-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+.jug-outline {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.water-fill {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.water-surface {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.jug-handle {
+  position: absolute;
+  top: 60px;
+  right: -20px;
+  width: 40px;
+  height: 80px;
+}
+
+.handle-top {
+  width: 40px;
+  height: 8px;
+  background: #94a3b8;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.handle-side {
+  width: 8px;
+  height: 80px;
+  background: #94a3b8;
+  border-radius: 4px;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.player-info {
+  text-align: center;
+  width: 100%;
+}
+
+.player-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.winner-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-icon {
+  width: 24px;
+  height: 24px;
+  color: #fbbf24;
+  filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+}
+
+.water-amount {
+  margin-bottom: 16px;
+}
+
+.amount-oz {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.amount-gallons {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  min-width: 40px;
+  text-align: right;
+}
+
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .jug-container {
+    width: 150px;
+    height: 225px;
+  }
+  
+  .jug-handle {
+    top: 45px;
+    right: -15px;
+    width: 30px;
+    height: 60px;
+  }
+  
+  .handle-top {
+    width: 30px;
+    height: 6px;
+  }
+  
+  .handle-side {
+    width: 6px;
+    height: 60px;
+  }
+  
+  .player-name {
+    font-size: 1.25rem;
+  }
+  
+  .amount-oz {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .jug-container {
+    width: 120px;
+    height: 180px;
+  }
+  
+  .jug-handle {
+    top: 36px;
+    right: -12px;
+    width: 24px;
+    height: 48px;
+  }
+  
+  .handle-top {
+    width: 24px;
+    height: 5px;
+  }
+  
+  .handle-side {
+    width: 5px;
+    height: 48px;
+  }
+  
+  .player-name {
+    font-size: 1.1rem;
+  }
+  
+  .amount-oz {
+    font-size: 1.25rem;
+  }
+  
+  .amount-gallons {
+    font-size: 0.875rem;
+  }
+}
