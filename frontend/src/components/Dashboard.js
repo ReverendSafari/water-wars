@@ -16,7 +16,7 @@ const Dashboard = ({ user, onLogout }) => {
   const [loading, setLoading] = useState(true);
 
   // API base URL - update this for production
-  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://water-wars.onrender.com';
 
   // Fetch today's data from API
   const fetchTodayData = async () => {
